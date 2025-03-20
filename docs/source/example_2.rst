@@ -1,2 +1,2 @@
-Tracking composition
+Example 2: Tracking composition
 ====================

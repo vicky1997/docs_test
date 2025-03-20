@@ -1,2 +1,2 @@
-1D vertical model
+Example 1: 1D vertical model
 =================
