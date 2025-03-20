@@ -1,4 +1,4 @@
-Standard run
+I/O
 ============
 
 | setup.par details here or in the setup?
