@@ -15,6 +15,7 @@
     
     setup
     inputoutput
+    codesetup
     dustcoagulation
     dustdynamics
     standardmodel
