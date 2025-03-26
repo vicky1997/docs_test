@@ -16,8 +16,8 @@
     setup
     inputoutput
     codesetup
-    dustcoagulation
     dustdynamics
+    dustcoagulation
     standardmodel
     dataviz
     example_1
