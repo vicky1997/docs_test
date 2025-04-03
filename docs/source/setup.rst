@@ -21,6 +21,7 @@ First run
 #. Set the number of threads for OpenMP parallelisation.
     :code:`export OMP_NUM_THREADS=$OMP_NUM_THREADS`
 #. Run the code
+    :code:`cd setups/Setup1`
     :code:`./default setup.par`
 
 
