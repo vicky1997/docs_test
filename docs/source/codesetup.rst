@@ -12,6 +12,7 @@ Workflow of :code:`mcdust`
 The workflow of the code is as shown below.
 
 .. image:: images/codeworkflow.png
+   :width:100
 
 Depending on the input parameters for the disk setup, the swarms of dust will be setup and advection and collisions will be performed for the swarms.
 
