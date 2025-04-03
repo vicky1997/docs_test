@@ -16,12 +16,12 @@ Now one can clone the github repository to use the code.
 
 First run
 +++++++++
-
- :code:`make default`
-
- :code:`export OMP_NUM_THREADS=$OMP_NUM_THREADS`
- 
- :code:`./default setup.par`
+#. Make the :code:`/setups/default` setup 
+    :code:`make default`
+#. Set the number of threads for OpenMP parallelisation.
+    :code:`export OMP_NUM_THREADS=$OMP_NUM_THREADS`
+#. Run the code
+    :code:`./default setup.par`
 
 
 
