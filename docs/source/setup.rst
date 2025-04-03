@@ -12,13 +12,15 @@ Pre-requisites:
     * a Python installation (if you want to use the pre-written post-processing scripts)
 Now one can clone the github repository to use the code.
 
-:code:`git clone git@github.com:astrojoanna/mcdust.git``
+:code:`git clone git@github.com:astrojoanna/mcdust.git`
 
 First run
 +++++++++
 
  :code:`make default`
+
  :code:`export OMP_NUM_THREADS=$OMP_NUM_THREADS`
+ 
  :code:`./default setup.par`
 
 
