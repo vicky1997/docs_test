@@ -1,5 +1,14 @@
-I/O
+Input and Output files
 ============
+Input
+++++++
+
+
+Output
+++++++
+
+
+
 
 | setup.par details here or in the setup?
 | to explain different parameters

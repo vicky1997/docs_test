@@ -8,8 +8,11 @@ Pre-requisites:
     * a fortran compiler (preferably gfortran), 
     
     * a fortran-OpenMP installation
+
+    * a hdf5 serial installation
     
     * a Python installation (if you want to use the pre-written post-processing scripts)
+
 Now one can clone the github repository to use the code.
 
 :code:`git clone git@github.com:astrojoanna/mcdust.git`
