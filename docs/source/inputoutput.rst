@@ -7,7 +7,15 @@ There are two required input files to run a simulation with mcdust, setup.par an
 Input file 1: setup.par
 -----------------------
 
-This is the space to specify the resolution of the simulation, the disk parameters and the 
+This is the file to specify the simulation parameters.
+
+
+
+
+
+Input file 2: preprocs.opt
+--------------------------
+
 
 
 Output
