@@ -69,6 +69,7 @@ Each data file also contains the mass of a swarm (in g) and the output number of
 The metadata of the code can be accessed using the h5dump command as shown below.
 
 .. code-block:: bash
+    
     h5dump -H data/swarms-00000.h5
     HDF5 "swarms-00000.h5" {
     GROUP "/" {
