@@ -27,5 +27,14 @@ First run
     | :code:`cd setups/Setup1`
     | :code:`./default setup.par`
 
+Restart
++++++++
 
+To (re)start the simulation from a specific snapshot. Here are the following steps.
+
+#. Copy the snapshot of your choice to the setup directory where you want to restart
+    :code:`cp your/data/directory/foo.h5 setups/restartrun/`
+#. Rename the file to :code:`restart.h5`
+    :code:`mv foo.h5 restart.h5`
+#. Set the :code:`restart` condition in the :code:`setup.par` file to :code:`.true.`
 

@@ -28,6 +28,7 @@ This is the file to specify the simulation parameters. The parameters to be ente
 | :code:`temperature_[K]`  - the temperature in K at 1 AU                         
 | :code:`erosion_mass_ratio` - mass ratio condition to trigger erosion                     
 | :code:`data_directory` - directory name to write the data  
+| :code:`restart` - to be set to true if we are starting a simulation from a snapshot
 
 
 If the values for the parameters are not entered in the file, the default values will be taken as specified in the :code:`parameters.f90` file. New parameters can also be added to the simulation via the :code:`parameters.f90` file.
@@ -44,7 +45,6 @@ This file specifies the regions of the code to be compiled based on compiler opt
 | :code:`COLLISIONS`: activate dust coagulation
 | :code:`EROSION`: activate erosion as a collision outcome
 | :code:`AUXDATA`: write timestep data
-| :code:`RESTART`: restart a simulation from a snapshot
 
 Comment on uncomment the options in the file based on the setup of the run.
 
@@ -74,7 +74,7 @@ The metadata of the code can be accessed using the :code:`h5dump` command as sho
 
 The output of the command shows us the metadata of the file :code:`swarms-00000.h5`
 .. code-block:: bash
-    
+
     HDF5 "swarms-00000.h5" {
     GROUP "/" {
     ATTRIBUTE "author" {
