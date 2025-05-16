@@ -66,11 +66,15 @@ Each data file contains the properties of each representative particle (called a
 
 Each data file also contains the mass of a swarm (in g) and the output number of the file as metadata.
 
-The metadata of the code can be accessed using the h5dump command as shown below.
+The metadata of the code can be accessed using the :code:`h5dump` command as shown in the example below.
 
 .. code-block:: bash
     
     h5dump -H data/swarms-00000.h5
+
+The output of the command shows us the metadata of the file :code:`swarms-00000.h5`
+.. code-block:: bash
+    
     HDF5 "swarms-00000.h5" {
     GROUP "/" {
     ATTRIBUTE "author" {
