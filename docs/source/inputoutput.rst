@@ -4,12 +4,12 @@ Input
 ++++++
 There are two required input files to run a simulation with mcdust, setup.par and prepocs.opt. The details are each file are explained below.
 
-Input file 1: setup.par
+Input file 1: `setup.par`
 -----------------------
 
 This is the file to specify the simulation parameters. The parameters to be entered in the file are written below
 
-| number_of_particles_per_cell  - Number of particles in a cell          
+| `number_of_particles_per_cell`  - Number of particles in a cell          
 | number_of_radial_zones  -  Number of radial grids            
 | number_of_vertical_zones -  Number of vertical grids                 
 | steps_between_outputs  - Number of iterations between outputs                   
@@ -30,10 +30,10 @@ This is the file to specify the simulation parameters. The parameters to be ente
 | data_directory - directory name to write the data  
 
 
-If the values for the parameters are not entered in the file, the default values will be taken as specified in the parameters.f90 file. New parameters can be added to the simulation vial the parameters.f90 file.
+If the values for the parameters are not entered in the file, the default values will be taken as specified in the `parameters.f90` file. New parameters can also be added to the simulation via the `parameters.f90` file.
 
 
-Input file 2: preprocs.opt
+Input file 2: `preprocs.opt`
 --------------------------
 This file specifies the regions of the code to be compiled based on compiler options. The current compiler options are listed
 
@@ -46,11 +46,13 @@ This file specifies the regions of the code to be compiled based on compiler opt
 | AUXDATA: write timestep data
 | RESTART: restart a simulation from a snapshot
 
+Comment on uncomment the options in the file based on the setup of the run.
+
 
 Output
 ++++++
 
-The output files are of the hdf5 file format with the extension .h5. Each snapshot has its own file and can accessed in outputs directory.
+The output files are of the hdf5 file format with the extension `.h5`. Each snapshot has its own file and can accessed in `outputs/` directory.
 
 Each data file contains the properties of each representative particle (called as a swarm). The properties that are stored in the default version are given below.
 
@@ -118,4 +120,4 @@ The metadata of the code can be accessed using the h5dump command as shown below
     }
     }
 
-To add new properties to be written, one can add the same in the hdf5output.f90 file. 
+To add new properties to be written, one can add the same in the `hdf5output.f90` file. 
