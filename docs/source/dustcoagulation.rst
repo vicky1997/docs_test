@@ -59,7 +59,12 @@ The timestep between the collisions is determined as
 
 where rand is a random number drawn from a uniform distribution between 0 and 1.
 
+And depending on the relative velocities the collisonal outcomes are decided for the particles. We explain the relative velocity formulation and the collisional outcomes below.
 
+Relative velocities
+-------------------
+The sources for the velocities of the particles taken into account are: Brownian motion, turbulence, radial and azimuthal drift and differential settling.
+This is similar to model followed by Birnstiel et al 2010. For the turbulent relative velocities, we use the prescription from Ormel and Cuzzi 2007.
 
 
 Collisional Outcomes
@@ -70,6 +75,15 @@ If the relative velocities are above the fragmentation velocity then there are t
 
 Sticking
 ^^^^^^^^
+In the case of sticking, we assume the physical particle :math:`k` has been completely merged into the representative particle :math:`i`.
+As a result the mass of the particle :math:`i` becomes
+
+.. math:: 
+
+    m_i <= m_i + m_k.
+
+Since the mass of the represenative particle :math:`i` increases, to conserve :math:`M_{\mathrm{swarm}}`, :math:`N_i` reduces.
+This is a statistical effect and it can be balanced out with more collisions in the system. We refer the user to Zsom and Dullemond 2008 for a detailed discussion.
 
 Fragmentation & Erosion
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -83,5 +97,3 @@ Adaptive Grid
 +++++++++++++
 In order to 
 
-Relative velocity
-+++++++++++++++++
