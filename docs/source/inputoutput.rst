@@ -73,6 +73,7 @@ The metadata of the code can be accessed using the :code:`h5dump` command as sho
     h5dump -H data/swarms-00000.h5
 
 The output of the command shows us the metadata of the file :code:`swarms-00000.h5`
+
 .. code-block:: bash
 
     HDF5 "swarms-00000.h5" {
