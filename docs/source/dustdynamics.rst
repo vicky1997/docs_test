@@ -20,7 +20,7 @@ The total diffusion velocity is given by,
 
 .. math:: 
 
-    v_{\mathrm{diff}} = \frac{\Delta r}{\Delta t} + D_d\frac{1}{\rho_g}\frac{\partial rho_g}{\partial r}
+    v_{\mathrm{diff}} = \frac{\Delta r}{\Delta t} + D_d\frac{1}{\rho_g}\frac{\partial \rho_g}{\partial r}
 
 where :math:`\Delta r` is the turbulent kick obtained from a Gaussian distribution. The second term accounts for the non-homogeniety of the gas distribution.
 
@@ -30,9 +30,9 @@ In the vertical direction, settling of the dust particles due to the gravity of 
 
 .. math:: 
 
-    v_z = -z\Omega_K \mathrm{St}
+    v_d^z = -z\Omega_K \mathrm{St}
 
-The diffusion in the vertical direction is implemented in the same way as in the radial direction as turbulent kicks.
+The diffusion in the vertical direction is implemented in the same way as in the radial direction as turbulent kicks (replacing :math:`Delta r` with :math:`\Delta z`).
 
 Advection timestep
 ++++++++++++++++++
