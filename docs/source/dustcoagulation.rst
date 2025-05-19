@@ -11,7 +11,7 @@ The total mass of physical particles in one swarm (:math:`M_{\mathrm{swarm}}`) i
     M_{\mathrm{swarm}} = m_i N_i,
 
 where :math:`m_i` is the mass of the representative particle :math:`i`. The fundamental assumption here is that :math:`M_{\mathrm{swarm}}` is the same for every swarm and is a constant that does not change with time. This means that if a particle grows (:math:`m_i` increases),
-the number of particles it represents reduces (:math:`N_i`). This is a statistical effect and not a physical effect.  
+the number of particles it represents reduces (:math:`N_i` reduces). This is a statistical effect and not a physical effect.  
 
 Collisions
 ++++++++++
