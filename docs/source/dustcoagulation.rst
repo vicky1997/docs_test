@@ -5,6 +5,7 @@ Dust coagulation in :code:`mcdust` is done with a Monte Carlo approach rather th
 For details we refer the reader to Drazkowksa et al 2013 and Zsom and Dullemond 2008. We follow representative particles and follow their evolution rather than tracking every single particle and its evolution. These :math:`n` representative particles statistically represent :math:`N` physical particles (:math:`n << N`).
 For eg, the representative particle :math:`i` shares identical properties with :math:`N_i` physical particles. 
 The total mass of physical particles in one swarm (:math:`M_{\mathrm{swarm}}`) is given by,
+
 .. math:: 
 
     M_{\mathrm{swarm}} = m_i N_i,
