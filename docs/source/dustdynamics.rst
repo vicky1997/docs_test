@@ -43,7 +43,7 @@ To properly resolve advection we limit the timestep according to the Courant con
 
 .. math:: 
 
-    \Delta t^x \lt \frac{\Delta x_{\mathrm{min}}}{v^x_{mathrm{max}}}
+    \Delta t^x \lt \frac{\Delta x_{\mathrm{min}}}{v^x_{\mathrm{max}}}
 
 This is calculated for both the radial and vertical directions and the the minimum is chosen :math:`\Delta t^d = \mathrm{min}(\Delta t^r, \Delta t^z)`.
 
