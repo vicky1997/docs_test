@@ -31,6 +31,34 @@ where V is the cell volume and :math:`K_{ik}` is the coagulation kernel which is
 
 with :math:`\sigma_{ik}` being the geometric cross-section for the collision and :math:`\Delta v_{ik}` being the relative velocity between particle :math:`i` and :math:`k`. 
 
+The total collision rate for any pair can be computed by
+
+.. math:: 
+
+    r = \sum_i \sum_k r_{ik}.
+
+Then, we can choose the represenative particle. The probability that the chosen particle is :math:`i` is,
+
+.. math:: 
+
+    P_i = \frac{\sum_k r_{ik}}{r}.
+
+The probability that this particle collides with a non-representative particle :math:`k` is given by,
+
+.. math:: 
+
+    P_{k|i} = \frac{r_{ik}}{\sum_k r_{ik}}.
+
+Both these particles are chosen by drawing a random number.
+
+The timestep between the collisions is determined as
+
+.. math:: 
+
+    \tau = - \frac{1}{r}\mathrm{ln}(\mathrm{rand}),
+
+where rand is a random number drawn from a uniform distribution between 0 and 1.
+
 
 
 
