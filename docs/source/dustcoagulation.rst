@@ -74,7 +74,7 @@ Collisional Outcomes
 In the standard model the collisional outcomes are sticking, fragmentation and erosion. The outcomes are decided based on the relative velocities of the particles.
 If the relative velocities are below a threshold velocity then we perform sticking. This threshold is the fragmentation velocity :math:`v_{\mathrm{frag}}` which is an input parameter for :code:`mcdust`.
 If the relative velocities are above the fragmentation velocity then there are two outcomes erosion and fragmentation depending on the mass ratio of the particles.
-
+The implementation of collisions can be found in the subroutine :code:`collision` and subroutines therein, in the file :code:`collisions.f90`
 Sticking
 ^^^^^^^^
 In the case of sticking, we assume the physical particle :math:`k` has been completely merged into the representative particle :math:`i`.
@@ -106,13 +106,49 @@ In the case of a full fragmentation, the largest mass of the fragment is the mas
 
 Collision Optimization
 ----------------------
-If there are several small particles colliding one after the other with a large particle it can get very time consuming to compute the miniscule mass increase of the larger particle.
-One trick to overcome that is to group the collisions and perform them at the same time saving computational time. This grouping introduces a fine-tuning parameter :math:`dm_{\mathrm{max}}` which specifies the minimum 
-increase of mass for coagulation. 
+Zsom & Dullemond introduced a fine-tuning parameter, denoted as :math:`dm_{\rm{max}}`, into the algorithm to group collisions and thereby
+ accelerate computation. It limits the maximum mass ratio for grouping collisions, and the collision rate :math:`C_{i,j}`` is altered as follows,
+ 
 
-This is usually set to be a constant. For larger values the optimization is very fast but introduces an error in the mass of the larger body.
-In order to reduce such effects we introduce an adaptive :math:`dm_{\mathrm{max}}` which is given by,
+.. math:: 
+ 
+    C^{\ast}{i,j} = \frac{m{j}/m_{i}}{dm_{\rm{max}}}C_{i,j}
 
+This approach is particularly advantageous in regions such as dust traps, where collisions between particles with a broad size distribution
+ occur frequently. However, their method was proposed without accounting for the transport of particles. Specifically, the probability of 
+ a collision between :math:`i`-th and :math:`j`-th can be reduced by a factor of, for example, 1000. When such a grouped collision occurs, 
+ particle :math:`i`-th is assumed to accrete the equivalent of 1000 times the mass of particle j. While computationally efficient, this 
+ simplification may not be realistic in dynamic systems, where particles can be advected across grid cells on timescales shorter than 
+ those required to undergo such a large number of collisions. To address this, we propose an adaptive :math:`dm_{\rm{max}}`, which depends not 
+ only on the mass ratio between colliding particles but also on the local collision rate and the spatial resolution of the grid.
+
+The adaptive value of :math:`dm_{\rm{max}}` for a collision between the :math:`i`-th and :math:`j`-th particles is computed as follows:
+
+.. math:: 
+
+    \tau_{i, \rm{transport}} = \tau^{\ast}{i,j, \rm{collision}}
+
+.. math:: 
+    \frac{\Delta r}{v{r, i}} = \frac{1}{C^{\ast}{i,j}}
+
+.. math::
+
+    \frac{\Delta r}{v{r, i}} = \frac{dm_{\rm{max}}}{m_{j}/m_{i}}\frac{1}{C_{i,j}}
+
+.. math:: 
+    
+    dm_{\rm{max}}=\frac{\Delta r}{v_{r, i}}\frac{m_{i}}{m_{j}}C_{i,j}
+
+
+where :math:`\Delta r` is the radial width of the grid cell. Here, the transport velocity :math:`v_{r, i}` accounts for all advection mechanisms except turbulence, which is excluded due to its stochastic nature.
+Hence, when the collision rate is high, :math:`dm_{\rm{max}}` can assume larger values, whereas in regions where transport is significant, :math:`m_{\rm{max}}` is reduced accordingly.
+ Additionally, since transport in our simulations can occur in the vertical direction as well, we generalize our expression as follows:
+
+.. math:: 
+
+    dm_{\rm{max}}=min(\frac{\Delta r}{v_{r, i}}, \frac{\Delta z}{v_{z, i}}) \cdot \frac{m_{i}}{m_{j}}C_{i,j}
+
+Moreover, we constrain :math:`dm_{\rm{max}}` such that it does not introduce an error exceeding 1%. Consequently, :math:`dm_{\rm{max}}` is limited to a maximum value of 0.01. 
 
 Adaptive Grid
 +++++++++++++
