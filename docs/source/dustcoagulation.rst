@@ -112,7 +112,7 @@ Zsom & Dullemond introduced a fine-tuning parameter, denoted as :math:`dm_{\rm{m
 
 .. math:: 
  
-    C^{\ast}{i,j} = \frac{m{j}/m_{i}}{dm_{\rm{max}}}C_{i,j}
+    C^{\ast}_{i,j} = \frac{m{j}/m_{i}}{dm_{\rm{max}}}C_{i,j}
 
 This approach is particularly advantageous in regions such as dust traps, where collisions between particles with a broad size distribution
  occur frequently. However, their method was proposed without accounting for the transport of particles. Specifically, the probability of 
@@ -126,14 +126,14 @@ The adaptive value of :math:`dm_{\rm{max}}` for a collision between the :math:`i
 
 .. math:: 
 
-    \tau_{i, \rm{transport}} = \tau^{\ast}{i,j, \rm{collision}}
+    \tau_{i, \rm{transport}} = \tau^{\ast}_{i,j, \rm{collision}}
 
 .. math:: 
-    \frac{\Delta r}{v{r, i}} = \frac{1}{C^{\ast}{i,j}}
+    \frac{\Delta r}{v_{r, i}} = \frac{1}{C^{\ast}_{i,j}}
 
 .. math::
 
-    \frac{\Delta r}{v{r, i}} = \frac{dm_{\rm{max}}}{m_{j}/m_{i}}\frac{1}{C_{i,j}}
+    \frac{\Delta r}{v_{r, i}} = \frac{dm_{\rm{max}}}{m_{j}/m_{i}}\frac{1}{C_{i,j}}
 
 .. math:: 
     
