@@ -107,7 +107,7 @@ In the case of a full fragmentation, the largest mass of the fragment is the mas
 Collision Optimization
 ----------------------
 Zsom & Dullemond introduced a fine-tuning parameter, denoted as :math:`dm_{\rm{max}}`, into the algorithm to group collisions and thereby
- accelerate computation. It limits the maximum mass ratio for grouping collisions, and the collision rate :math:`C_{i,j}`` is altered as follows,
+accelerate computation. It limits the maximum mass ratio for grouping collisions, and the collision rate :math:`C_{i,j}`` is altered as follows,
  
 
 .. math:: 
@@ -115,12 +115,12 @@ Zsom & Dullemond introduced a fine-tuning parameter, denoted as :math:`dm_{\rm{m
     C^{\ast}_{i,j} = \frac{m{j}/m_{i}}{dm_{\rm{max}}}C_{i,j}
 
 This approach is particularly advantageous in regions such as dust traps, where collisions between particles with a broad size distribution
- occur frequently. However, their method was proposed without accounting for the transport of particles. Specifically, the probability of 
- a collision between :math:`i`-th and :math:`j`-th can be reduced by a factor of, for example, 1000. When such a grouped collision occurs, 
- particle :math:`i`-th is assumed to accrete the equivalent of 1000 times the mass of particle j. While computationally efficient, this 
- simplification may not be realistic in dynamic systems, where particles can be advected across grid cells on timescales shorter than 
- those required to undergo such a large number of collisions. To address this, we propose an adaptive :math:`dm_{\rm{max}}`, which depends not 
- only on the mass ratio between colliding particles but also on the local collision rate and the spatial resolution of the grid.
+occur frequently. However, their method was proposed without accounting for the transport of particles. Specifically, the probability of 
+a collision between :math:`i`-th and :math:`j`-th can be reduced by a factor of, for example, 1000. When such a grouped collision occurs, 
+particle :math:`i`-th is assumed to accrete the equivalent of 1000 times the mass of particle j. While computationally efficient, this 
+simplification may not be realistic in dynamic systems, where particles can be advected across grid cells on timescales shorter than 
+those required to undergo such a large number of collisions. To address this, we propose an adaptive :math:`dm_{\rm{max}}`, which depends not 
+only on the mass ratio between colliding particles but also on the local collision rate and the spatial resolution of the grid.
 
 The adaptive value of :math:`dm_{\rm{max}}` for a collision between the :math:`i`-th and :math:`j`-th particles is computed as follows:
 
