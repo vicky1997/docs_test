@@ -156,3 +156,5 @@ The method works in such a way that each cell has the same number of particles w
 
 
 We show a schematic reprentation of the adaptive grid method below,
+
+.. image:: images/adaptivegrid.png
