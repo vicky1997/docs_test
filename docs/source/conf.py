@@ -4,7 +4,7 @@
 
 project = 'mcdust'
 copyright = '2025, Vaikundaraman'
-author = 'Vaikundaraman'
+author = 'Vignesh Vaikundaraman, Nerea Gurrutxaga, Joanna Drazkowska'
 
 release = '0.1'
 version = '0.1.0'
